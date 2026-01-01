@@ -1,0 +1,35 @@
+INPUT N
+
+IF N <= 2 THEN
+	OUTPUT "Nilai terlalu kecil"
+	
+ELSE IF N >= 10 THEN
+	OUTPUT "Nilai terlalu besar"
+	
+ELSE
+	DECLARE list BARIS
+	
+	// Baris atas
+	BARIS[0] = "=" diulang N kali
+	
+	// Baris tengah
+	FOR i = 1 TO N - 2 DO
+		BARIS[i] = "|" + (" " diulang N - 2) + "|"
+	END FOR
+	
+	// Baris bawah
+	BARIS[N - 1] = "=" diulang N kali
+	
+	// Cetak segiempat
+	FOR i = 0 TO N - 1 DO
+		OUTPUT BARIS[i]
+	END FOR
+	
+	// Gabungkan semua baris menjadi 1 baris
+	DECLARE STRING GABUNGAN = ""
+	FOR i = 0 TO N - 1 DO
+		GABUNGAN = GABUNGAN + BARIS[i]
+	END FOR
+	
+	OUTPUT GABUNGAN
+END IF
